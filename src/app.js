@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Counter from "./components/counter";
 
-export default class App extends Component {
+export default class App2 extends Component {
 	render() {
 		return (
 			<div>
