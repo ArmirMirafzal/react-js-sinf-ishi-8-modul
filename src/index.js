@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./components/89-dars-increment/app";
+
+import App from "./components/app";
+
 import "bootstrap/dist/css/bootstrap.css";
 import "./assets/index.css";
 
