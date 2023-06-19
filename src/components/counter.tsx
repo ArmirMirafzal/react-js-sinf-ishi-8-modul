@@ -14,7 +14,10 @@ export default class Counter extends React.Component<CounterProps, {}> {
 
 	handleIncrement = (step = 10) => {
 		this.props.onIncrement(step);
+
 	};
+
+
 
 	render() {
 		const { count } = this.props;

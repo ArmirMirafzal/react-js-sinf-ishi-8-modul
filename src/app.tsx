@@ -27,7 +27,10 @@ export default class App extends Component<AppProps, AppState> {
 
 	handleIncrement = (countID: number, step = 10) => {
 		console.log("countID = ", countID);
-		// this.setState((prev) => ({ counters: prev.counters.map((count) => count + step) }));
+	};
+
+	handleDecrement = (countID: number, step = 10) => {
+		console.log("countID = ", countID);
 	};
 
 	render() {
