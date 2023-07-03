@@ -1,22 +1,37 @@
 import { Component } from "react";
-import { Navbar, Posts, Comments } from "components";
+import { Home, Login, Register } from "pages";
+import { Navbar } from "components";
 
 interface AppState {
-	postID: number | null;
+	pathname: string;
 }
+
 export default class App extends Component<{}, AppState> {
 	state: AppState = {
-		postID: null,
+		pathname: window.location.pathname,
+	};
+
+	getPage = () => {
+		switch (this.state.pathname) {
+			case "/login":
+				return <Login />;
+			case "/register":
+				return <Register />;
+			default:
+				return <Home />;
+		}
+	};
+
+	handleNavigate = (pathname: string) => {
+		this.setState({ pathname });
 	};
 
 	render() {
+		const { pathname } = this.state;
 		return (
 			<>
-				<Navbar />
-				<main className="container my-4">
-					<Comments postID={this.state.postID} />
-					<Posts onView={(postID) => this.setState({ postID })} />
-				</main>
+				<Navbar currentPathname={pathname} onNavigate={this.handleNavigate} />
+				<div className="container">{this.getPage()}</div>
 			</>
 		);
 	}
